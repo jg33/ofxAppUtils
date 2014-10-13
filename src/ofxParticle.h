@@ -84,6 +84,9 @@ class ofxParticle : public ofRectangle {
 		/// calculation, default is 500 ms
 		static void setFrameTimeout(unsigned int timeout) {_frameTimeout = timeout;}
 		static unsigned int getFrameTimeout() {return _frameTimeout;}
+    
+    virtual void attractToward(ofVec3f v,float f){};
+
 
 	protected:
 
@@ -93,6 +96,7 @@ class ofxParticle : public ofRectangle {
 		double age;         ///< how old the particle is
 
 		ofxTimer lifeTimer; ///< used to time the age between frames
+    
 
 	private:
 

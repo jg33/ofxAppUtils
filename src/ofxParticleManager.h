@@ -71,7 +71,7 @@ class ofxParticleManager {
 			for(iter = particleList.begin(); iter != particleList.end();) {
 				// remove particle if it's NULL
 				if((*iter) == NULL) {
-					ofLogWarning("ofxParticleManager") << "update(): removing NULL particle";
+			ofLogWarning("ofxParticleManager") << "update(): removing NULL particle";
 					iter = particleList.erase(iter);
 				}
 				else {
@@ -116,6 +116,8 @@ class ofxParticleManager {
 		bool empty() {
 			return particleList.empty();
 		}
+    
+    vector<ofxParticle*> * getParticlesPtr() {return &particleList;};
 
 	protected:
 
