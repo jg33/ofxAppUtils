@@ -88,6 +88,9 @@ class ofxParticle : public ofRectangle {
     virtual void attractToward(ofVec3f v,float f){};
 
 
+    inline void setAcc(ofVec3f a){acc=a;};
+    inline ofVec3f getAcc(){return acc;};
+    
 	protected:
 
 		bool bAlive;        ///< is this particle alive?
@@ -97,6 +100,7 @@ class ofxParticle : public ofRectangle {
 
 		ofxTimer lifeTimer; ///< used to time the age between frames
     
+        ofVec3f pos, vel, acc; /// position, velocity, acceleration
 
 	private:
 
